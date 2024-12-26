@@ -2,13 +2,18 @@ import pickle
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 from flask import Flask, render_template, request, jsonify
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from the .env file
+load_dotenv()
 
 # Initialize Flask app
 app = Flask(__name__)
 
-# Spotify credentials
-CLIENT_ID = "0c53205e120e40e08250e16d31bd15f7"
-CLIENT_SECRET = "6157ff0983dc486eb4b46d92751cc7b6"
+# Spotify credentials from environment variables
+CLIENT_ID = os.getenv("CLIENT_ID")
+CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 
 # Initialize the Spotify client
 client_credentials_manager = SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
