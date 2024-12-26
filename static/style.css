@@ -1,0 +1,149 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+/* Particle Effect Container */
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Main container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header styling with gradient and shadow */
+header {
+    text-align: center;
+    margin: 50px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #00ff00, #004d00);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transform: perspective(1000px) rotateX(15deg);
+}
+
+header h1 {
+    font-size: 3em;
+    font-weight: bold;
+    color: white;
+}
+
+/* Form styling */
+.form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    gap: 20px;
+}
+
+select, button {
+    padding: 15px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    background-color: #333333;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+select:hover, button:hover {
+    background-color: #00ff00;
+    color: black;
+    transform: translateY(-5px) scale(1.05);
+}
+
+button {
+    background-color: #00ff00;
+    color: black;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Styling the recommendations section with 3D effects */
+.recommendations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.recommendation {
+    background: linear-gradient(135deg, #333333, #444444);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 200px;
+    transition: 0.3s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.recommendation:hover {
+    background: linear-gradient(135deg, #00ff00, #004d00);
+    box-shadow: 0 5px 25px rgba(0, 255, 0, 0.5);
+    
+}
+
+.recommendation img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+.recommendation img:hover {
+    transform: scale(1.05);
+}
+
+.recommendation h3 {
+    font-size: 1.2em;
+    color: white;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Floating artifact effect */
+@keyframes floating {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .form-group {
+        flex-direction: column;
+    }
+
+    .recommendations {
+        justify-content: center;
+    }
+}
+html {
+    scroll-behavior: smooth;
+}
