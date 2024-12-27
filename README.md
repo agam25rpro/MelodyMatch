@@ -51,7 +51,7 @@ Welcome to **MelodyMatch**! 🎧 This is a **Music Recommender System** designed
 
 - Once you choose a song and hit **"Show Recommendation"**, you'll see a list of recommended songs displayed along with their album covers. 🎤
 
-![Recommendations Preview](./ReccomendationsPreview.png) 📷
+![Recommendations Preview](./RecommendationsPreview.png) 📷
 
 ---
 
