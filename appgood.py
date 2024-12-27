@@ -3,6 +3,7 @@ import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 from flask import Flask, render_template, request, jsonify
 import os
+import requests
 from dotenv import load_dotenv
 
 # Load environment variables from the .env file
@@ -12,12 +13,22 @@ load_dotenv()
 app = Flask(__name__)
 
 # Spotify credentials from environment variables
-CLIENT_ID = os.getenv("CLIENT_ID")
-CLIENT_SECRET = os.getenv("CLIENT_SECRET")
+CLIENT_ID = os.getenv('CLIENT_ID')
+CLIENT_SECRET = os.getenv('CLIENT_SECRET')
 
 # Initialize the Spotify client
 client_credentials_manager = SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
+
+# Function to download similarity.pkl from Google Drive
+def download_similarity_pkl():
+    url = "https://drive.google.com/uc?id=1n2cBVm1gTx4utK2F2LrFOMPWpPn-Jj0n"
+    response = requests.get(url)
+    with open("similarity.pkl", "wb") as f:
+        f.write(response.content)
+
+# Download the similarity file
+download_similarity_pkl()
 
 # Load data
 music = pickle.load(open('df.pkl', 'rb'))
