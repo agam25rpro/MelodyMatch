@@ -23,9 +23,13 @@ sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 # Function to download similarity.pkl from Google Drive
 def download_similarity_pkl():
     url = "https://drive.google.com/uc?id=1n2cBVm1gTx4utK2F2LrFOMPWpPn-Jj0n"
-    response = requests.get(url)
-    with open("similarity.pkl", "wb") as f:
-        f.write(response.content)
+    response = requests.get(url, stream=True)
+    if response.status_code == 200:
+        with open("similarity.pkl", "wb") as f:
+            for chunk in response.iter_content(chunk_size=8192):
+                f.write(chunk)
+    else:
+        raise Exception("Failed to download the file: HTTP Status", response.status_code)
 
 # Download the similarity file
 download_similarity_pkl()
