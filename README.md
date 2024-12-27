@@ -45,13 +45,13 @@ Welcome to **MelodyMatch**! 🎧 This is a **Music Recommender System** designed
 
 - You’ll find a dropdown menu with a list of available songs that you can choose from. 🎶
 
-![Music UI Preview](./MusicUIPreview) 📷
+![Music UI Preview](./MusicUIPreview.png) 📷
 
 ### **Song Recommendations:**
 
 - Once you choose a song and hit **"Show Recommendation"**, you'll see a list of recommended songs displayed along with their album covers. 🎤
 
-![Recommendations Preview](./ReccomendationsPreview) 📷
+![Recommendations Preview](./ReccomendationsPreview.png) 📷
 
 ---
 
